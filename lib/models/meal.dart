@@ -21,6 +21,7 @@ class Meal {
   final List<String> steps;
   final int duration;
   final Complexity complexity;
+  // final String complexityText;
   final Affordability affordability;
   final bool isGlutenFree;
   final bool isLactoseFree;
