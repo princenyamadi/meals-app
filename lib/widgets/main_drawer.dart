@@ -1,6 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/screens/filters_screen.dart';
 
 class MainDrawer extends StatelessWidget {
+  Widget buildListTile({
+    String title,
+    IconData icon,
+    Function tapHandler,
+  }) {
+    return ListTile(
+      leading: Icon(
+        icon,
+        size: 36,
+      ),
+      title: Text(
+        title,
+        style: TextStyle(
+          fontFamily: 'RobotoCondensed',
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      onTap: tapHandler,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -23,36 +46,19 @@ class MainDrawer extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          ListTile(
-            leading: Icon(
-              Icons.restaurant,
-              size: 36,
-            ),
-            title: Text(
-              'Meal',
-              style: TextStyle(
-                fontFamily: 'RobotoCondensed',
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.settings,
-              size: 36,
-            ),
-            title: Text(
-              'Filter',
-              style: TextStyle(
-                fontFamily: 'RobotoCondensed',
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            onTap: () {},
-          )
+          buildListTile(
+              icon: Icons.restaurant,
+              title: 'Meal',
+              tapHandler: () {
+                Navigator.of(context).pushReplacementNamed('/');
+              }),
+          buildListTile(
+              icon: Icons.settings,
+              title: 'Filter',
+              tapHandler: () {
+                Navigator.of(context)
+                    .pushReplacementNamed(FiltersScreen.routeName);
+              }),
         ],
       ),
     );
