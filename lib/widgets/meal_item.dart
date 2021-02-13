@@ -9,7 +9,8 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
-  final Function removeItem;
+  // final Function removeItem;
+  bool isFavorite;
   MealItem({
     @required this.id,
     @required this.affordability,
@@ -17,7 +18,7 @@ class MealItem extends StatelessWidget {
     @required this.duration,
     @required this.imageUrl,
     @required this.title,
-    @required this.removeItem,
+    // @required this.removeItem,
   });
 
   String get complexityText {

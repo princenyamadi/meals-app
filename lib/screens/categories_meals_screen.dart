@@ -58,7 +58,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
           itemCount: displayedMeals.length,
           itemBuilder: (ctx, index) {
             return MealItem(
-              removeItem: _removeMeal,
+              // removeItem: _removeMeal,
               id: displayedMeals[index].id,
               title: displayedMeals[index].title,
               duration: displayedMeals[index].duration,
